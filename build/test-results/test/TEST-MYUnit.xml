@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MYUnit" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-01-14T11:57:59" hostname="DESKTOP-285ADBM" time="272.514">
+<testsuite name="MYUnit" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-19T10:02:57" hostname="DESKTOP-285ADBM" time="18.159">
   <properties/>
-  <testcase name="img_check" classname="MYUnit" time="142.36"/>
-  <testcase name="getTitle" classname="MYUnit" time="130.154"/>
-  <system-out><![CDATA[image is display
-ToolsQA
+  <testcase name="from_fill_up" classname="MYUnit" time="18.159"/>
+  <system-out><![CDATA[fill up the from
 ]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 97.0.4692.71 (adefa7837d02a07a604c1e6eff0b3a09422ab88d-refs/branch-heads/4692@{#1247}) on port 54845
+Starting ChromeDriver 97.0.4692.71 (adefa7837d02a07a604c1e6eff0b3a09422ab88d-refs/branch-heads/4692@{#1247}) on port 63261
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Jan 14, 2022 5:58:03 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Jan 19, 2022 4:03:01 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Jan 14, 2022 5:58:03 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Jan 19, 2022 4:03:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 97, so returning the closest version found: 96
-Jan 14, 2022 5:58:03 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-INFO: Found CDP implementation for version 97 of 96
-Starting ChromeDriver 97.0.4692.71 (adefa7837d02a07a604c1e6eff0b3a09422ab88d-refs/branch-heads/4692@{#1247}) on port 50468
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Jan 14, 2022 6:00:23 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-Jan 14, 2022 6:00:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find an exact match for CDP version 97, so returning the closest version found: 96
-Jan 14, 2022 6:00:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Jan 19, 2022 4:03:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found CDP implementation for version 97 of 96
 ]]></system-err>
 </testsuite>
