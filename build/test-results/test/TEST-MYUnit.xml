@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MYUnit" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-19T10:02:57" hostname="DESKTOP-285ADBM" time="18.159">
+<testsuite name="MYUnit" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-21T16:53:32" hostname="DESKTOP-285ADBM" time="71.495">
   <properties/>
-  <testcase name="from_fill_up" classname="MYUnit" time="18.159"/>
-  <system-out><![CDATA[fill up the from
-]]></system-out>
+  <testcase name="handleIframe" classname="MYUnit" time="71.495"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 97.0.4692.71 (adefa7837d02a07a604c1e6eff0b3a09422ab88d-refs/branch-heads/4692@{#1247}) on port 63261
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Jan 19, 2022 4:03:01 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+1642784013362	geckodriver	INFO	Listening on 127.0.0.1:56146
+1642784014878	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headed" "--remote-debugging-port" "52396" "-no-remote" "-profile" "C:\\Users\\USER\\AppData\\Local\\Temp\\rust_mozprofileE3bOHL"
+1642784015471	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\USER\\AppData\\Local\\Temp\\rust_mozprofileE3bOHL\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52396/devtools/browser/4901384d-9520-48fb-bd23-89b5ffe8678a
+1642784018440	Marionette	INFO	Listening on port 53344
+1642784018599	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Jan 21, 2022 10:53:38 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Jan 19, 2022 4:03:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find an exact match for CDP version 97, so returning the closest version found: 96
-Jan 19, 2022 4:03:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-INFO: Found CDP implementation for version 97 of 96
+JavaScript warning: https://pagead2.googlesyndication.com/bg/vF3DwGiQdwtNbsVxkFzRL_iZiNaTmsYTTs4lOxRXugY.js line 1 > eval line 6104 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/vF3DwGiQdwtNbsVxkFzRL_iZiNaTmsYTTs4lOxRXugY.js line 1 > eval line 1812 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+Jan 21, 2022 10:54:42 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found exact CDP implementation for version 85
+1642784082563	Marionette	INFO	Stopped listening on port 53344
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
 ]]></system-err>
 </testsuite>

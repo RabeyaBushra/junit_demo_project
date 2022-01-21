@@ -11,23 +11,29 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import static java.lang.Thread.sleep;
 
 public class MYUnit {
 
         WebDriver driver;
+        WebDriverWait wait;
         @Before
         public void setup(){
-            System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
-            ChromeOptions ops = new ChromeOptions();
+            System.setProperty("webdriver.gecko.driver", "./src/test/resources/geckodriver.exe");
+            FirefoxOptions ops = new FirefoxOptions();
             ops.addArguments("--headed");
-            driver=new ChromeDriver(ops);
+            driver=new FirefoxDriver(ops);
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         }
@@ -144,13 +150,114 @@ public class MYUnit {
             Select color=new Select(driver.findElement(By.id("oldSelectMenu")));
             color.selectByValue("1");
             sleep(2000);
-            Select cars=new Select(driver.findElement(By.id("cars")));
+            Select cars=new Select(driver.findElement(By.cssSelector("#cars")));
+            sleep(2000);
             if (cars.isMultiple()) {
+
                 cars.selectByValue("volvo");
+
                 cars.selectByValue("audi");
-                sleep(2000);
+
             }
-     sleep(2000);
+            sleep(2000);
+        }
+@Test
+ public void HandlesNewTabs() throws InterruptedException {
+     driver.get("https://demoqa.com/links");
+     driver.findElement(By.id("simpleLink")).click();
+     sleep(5000);
+     ArrayList<String> w = new ArrayList<String>(driver.getWindowHandles());
+     driver.switchTo().window(w.get(1));
+     String tittle = driver.getTitle();
+     System.out.println("New tab title: " + driver.getTitle());
+    wait = new WebDriverWait(driver,Duration.ofSeconds(50));
+    WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@src='/images/Toolsqa.jpg']")));
+    Boolean status = element.isDisplayed();
+    Assert.assertEquals(true,status);
+     //Assert.assertTrue(tittle.contains("ToolsQa"));
+    driver.close();
+     driver.switchTo().window(w.get(0));
+
+ }
+ @Test
+public void handleChildWindow() throws InterruptedException {
+
+    driver.get("https://demoqa.com/browser-windows");
+    WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(40));
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("windowButton")));
+    driver.findElement(By.id(("windowButton"))).click();
+    String mainWindowHandle = driver.getWindowHandle();
+    Set<String> allWindowHandles = driver.getWindowHandles();
+    Iterator<String> iterator = allWindowHandles.iterator();
+    while (iterator.hasNext()) {
+        String ChildWindow = iterator.next();
+        if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
+            driver.switchTo().window(ChildWindow);
+            String text= driver.findElement(By.id("sampleHeading")).getText();
+            Assert.assertTrue(text.contains("This is a sample page"));
+
+        }
+
+    }
+
+}
+
+@Test
+public void modalDialog() throws InterruptedException {
+            driver.get("https://demoqa.com/modal-dialogs");
+            wait =new WebDriverWait(driver,Duration.ofSeconds(40));
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("showSmallModal")));
+            element.click();
+            //driver.findElement(By.id("showSmallModal")).click();
+            //element.click();
+            sleep(2000);
+            driver.findElement(By.id("closeSmallModal")).click();
+        }
+        @Test
+    public void webTables() throws InterruptedException {
+            driver.get("https://demoqa.com/webtables");
+            wait =new WebDriverWait(driver,Duration.ofSeconds(40));
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@id=\"edit-record-1\"]//*[name()=\"svg\"]")));
+            element.click();
+            //driver.findElement(By.id("//input[@id='firstName']")).clear();
+            //sleep(2000);
+            driver.findElement(By.id("firstName")).sendKeys("mina");
+            sleep(2000);
+
+            driver.findElement(By.id("submit")).click();
+        }
+@Test
+    public void scrapData(){
+            driver.get("https://demoqa.com/webtables");
+            WebElement table = driver.findElement(By.className("rt-tbody"));
+            List<WebElement> allRows = table.findElements(By.className("rt-tr"));
+            int i=0;
+            for (WebElement row : allRows) {
+                List<WebElement> cells = row.findElements(By.className("rt-td"));
+                for (WebElement cell : cells) {
+                    i++;
+                    System.out.println("num["+i+"] "+ cell.getText());
+                }
+            }
+        }
+
+@Test
+public void uploadImg()
+{
+    driver.get("https://demoqa.com/upload-download");
+    wait =new WebDriverWait(driver,Duration.ofSeconds(40));
+    WebElement imgElement= wait.until(ExpectedConditions.elementToBeClickable(By.id("uploadFile")));
+
+    imgElement.sendKeys("D:\\img.jpg");
+
+}
+@Test
+    public void handleIframe(){
+            driver.get("https://demoqa.com/frames");
+            driver.switchTo().frame("frame2");
+            String text= driver.findElement(By.id("sampleHeading")).getText();
+            Assert.assertTrue(text.contains("This is a sample page"));
+            driver.switchTo().defaultContent();
         }
 
 
