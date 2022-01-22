@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MYUnit" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-21T16:53:32" hostname="DESKTOP-285ADBM" time="71.495">
+<testsuite name="MYUnit" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-22T12:18:23" hostname="DESKTOP-285ADBM" time="10.028">
   <properties/>
-  <testcase name="handleIframe" classname="MYUnit" time="71.495"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="readExcelFile" classname="MYUnit" time="10.028"/>
+  <system-out><![CDATA[Id|| 
+Name|| 
+
+1|| 
+bushra|| 
+
+2|| 
+ishrat|| 
+
+3|| 
+Aysha|| 
+
+4|| 
+tonni|| 
+
+5|| 
+Taiva|| 
+
+]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-1642784013362	geckodriver	INFO	Listening on 127.0.0.1:56146
-1642784014878	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headed" "--remote-debugging-port" "52396" "-no-remote" "-profile" "C:\\Users\\USER\\AppData\\Local\\Temp\\rust_mozprofileE3bOHL"
-1642784015471	Marionette	INFO	Marionette enabled
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\USER\\AppData\\Local\\Temp\\rust_mozprofileE3bOHL\\search.json.mozlz4", (void 0)))
-DevTools listening on ws://localhost:52396/devtools/browser/4901384d-9520-48fb-bd23-89b5ffe8678a
-1642784018440	Marionette	INFO	Listening on port 53344
-1642784018599	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-Jan 21, 2022 10:53:38 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+1642853904748	geckodriver	INFO	Listening on 127.0.0.1:50746
+1642853906282	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headed" "--remote-debugging-port" "60675" "-no-remote" "-profile" "C:\\Users\\USER\\AppData\\Local\\Temp\\rust_mozprofilet2O5W8"
+1642853906945	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\USER\\AppData\\Local\\Temp\\rust_mozprofilet2O5W8\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60675/devtools/browser/14803d2a-5b75-46ff-86ca-9ebc2818759a
+1642853910323	Marionette	INFO	Listening on port 56835
+1642853910502	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Jan 22, 2022 6:18:30 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-JavaScript warning: https://pagead2.googlesyndication.com/bg/vF3DwGiQdwtNbsVxkFzRL_iZiNaTmsYTTs4lOxRXugY.js line 1 > eval line 6104 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-JavaScript warning: https://pagead2.googlesyndication.com/bg/vF3DwGiQdwtNbsVxkFzRL_iZiNaTmsYTTs4lOxRXugY.js line 1 > eval line 1812 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-Jan 21, 2022 10:54:42 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Jan 22, 2022 6:18:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found exact CDP implementation for version 85
-1642784082563	Marionette	INFO	Stopped listening on port 53344
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1642853911283	Marionette	INFO	Stopped listening on port 56835
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
